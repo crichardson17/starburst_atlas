@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+mkdir stuff
+cat grid000*.txt > ELines.txt
+cat padova*abs.txt Elines.txt > EmissionLines.txt 
+
+cat grid000*.grd > fullgrid.grd
+
+mv grid00* stuff/
+mv *err* stuff/
+mv padova_* stuff/
+mv Elines.txt stuff/
+
+ls

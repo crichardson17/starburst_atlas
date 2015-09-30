@@ -1,0 +1,8 @@
+=>> PBS: job killed: walltime 18032 exceeded limit 18000
+mpirun: killing job...
+
+mpirun: abort is already in progress...hit ctrl-c again to forcibly terminate
+
+Nodes:        trestles-2-12 trestles-3-5 trestles-4-12 trestles-5-30 
+trestles-6-22 trestles-6-26 trestles-6-5 trestles-8-18 trestles-9-17 
+trestles-9-6

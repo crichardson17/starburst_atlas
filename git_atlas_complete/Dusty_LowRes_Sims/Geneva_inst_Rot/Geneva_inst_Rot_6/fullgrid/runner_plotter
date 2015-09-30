@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+python Optical1.py && python Optical2.py && python UV1.py && python UV2.py && python IR.py && python peaks_reader.py
+clear
+ls
+open *.pdf
