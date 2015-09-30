@@ -13,7 +13,7 @@ color1 = "#0000CC" #dark blue
 color2 = "#33CCFF" #light blue
 color3 = "#990066" #dark pink
 color4 = "#FF66B2" #light pink
-plt.subplots_adjust(wspace=0, hspace=1) #remove space between plots
+plt.subplots_adjust(wspace=0, hspace=.8) #remove space between plots
 
 def add_sub_plot(sub_num, desiredline):
 	
@@ -65,9 +65,7 @@ def add_sub_plot(sub_num, desiredline):
 	
 
 	if sub_num == 6:
-		figtext(.5,.705,'Strong IR Emission Lines', fontsize=8, ha='center')
-	if sub_num == 2:
-		figtext(.5,.95,'Weak IR Emission Lines', fontsize=8, ha='center')
+		figtext(.5,.95,'Strong IR Emission Lines', fontsize=8, ha='center')
 	if sub_num == 1:
 		plt.legend(bbox_to_anchor=(0., 1.2, 4., 0), loc=1, ncol=4, mode="expand", prop={'size':6}, borderaxespad=0.)
 
