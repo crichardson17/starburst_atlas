@@ -153,11 +153,12 @@ def add_sub_plot_subsolar(eline,sub_num, set,rows):
 	plt.xlim(xt_min,xt_max) 
 	plt.yticks(arange(yt_min+1,yt_max,2),fontsize=10)
 	plt.xticks(arange(xt_min+1,xt_max,1), fontsize = 10)
-	if sub_num in [1,5,9,13,17,21] : 
+	if sub_num in [1,5] : 
 		plt.ylabel('Log ($ \phi  _{\mathrm{H}}  $)')
-	if sub_num in [13] : 
+	if sub_num in [5] : 
 		plt.xlabel('Log($n _{\mathrm{H}}  $)')
 		plt.tick_params(labelbottom = 'on')
+		plt.xticks(arange(xt_min+1,xt_max,1), fontsize = 10)
 #SOLAR
 def add_sub_plot_solar(eline,sub_num, set, rows):
 
@@ -494,9 +495,9 @@ xsupersolar = gridarraysupersolar[:,0]
 ysupersolar = gridarraysupersolar[:,1]
 
 #change desired lines here!
-line = [[1,3,7,18],
-		[41,43,57,61],
-		[76,87,101,106]]
+line = [[19,34],
+		[67,71],
+		[111,112]]
 
 #create z array for this plot
 zsolar = [None] * (len(line))
@@ -549,15 +550,15 @@ z_new2_supersolar = np.reshape(zsupersolar[2],(Nysupersolar,Nxsupersolar,len(lin
 
 z_total_supersolar = [z_new0_supersolar,z_new1_supersolar,z_new2_supersolar]
 
-#---------------------------------------------------
+# ---------------------------------------------------
 #plot
 plt.subplots_adjust(wspace=0, hspace=0) #remove space between plots
 levels = arange(10**-1,10, .2)
 levels2 = arange(10**-2,10**2, 1)
 # ---------------------------------------------------
-plotnames = ["UV_MetallicityComp.pdf", "Optical_MetallicityComp.pdf","IR_MetallicityComp.pdf"] 
 
-subplots_ref2 = [1,5,9,13]#,17,21]
+plotnames = ["UV_continued.pdf", "Optical_Continued.pdf","IR_Continued.pdf"] 
+subplots_ref2 = [1,5]
 for i in range(3):
 	counter = 0
 	print "plot started"
