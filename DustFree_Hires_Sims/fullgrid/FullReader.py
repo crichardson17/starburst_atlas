@@ -104,7 +104,7 @@ def add_sub_plot(sub_num, elinesplot):
 	plt.annotate(max_values[line[elinesplot][sub_num-1],0], xy = (max_values[line[elinesplot][sub_num-1],2], max_values[line[elinesplot][sub_num-1],3]), xytext = (0, -10), textcoords = 'offset points', ha = 'right', va = 'bottom', fontsize=10)
 	
 	#axis limits
-	yt_min = 8 ; yt_max = 21; xt_min = 0; xt_max = 10 
+	yt_min = 8 ; yt_max = 17; xt_min = 0; xt_max = 10 
 	plt.ylim(yt_min,yt_max); plt.xlim(xt_min,xt_max) 
 
 	#ticks
@@ -184,7 +184,7 @@ Emissionlines_2 = empty(shape=[0, len(Emissionlines[0,:])])
 
 #save data in range desired to temp arrays
 for i in range(len(hdens_values)):
-	if float(hdens_values[i]) < 10.100 : 
+	if (float(hdens_values[i]) < 10.100) & (float(phi_values[i]) < 17.100) : 
 		hdens_values_2 = append(hdens_values_2, hdens_values[i])
 		phi_values_2 = append(phi_values_2, phi_values[i])
 		Emissionlines_2 = vstack([Emissionlines_2, Emissionlines[i,:]])
