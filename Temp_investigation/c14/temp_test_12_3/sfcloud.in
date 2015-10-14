@@ -1,0 +1,40 @@
+#
+###############
+#### Initial Conditions 
+##################
+c
+phi(H) 12.000000 
+hden 3.000000
+set pres ionize 1e5 #added according to Ferland 2013 message board post to prevent grid 37 abort
+c
+##################
+####Radiation field
+##################
+c
+table star "cont_padova_agbtrack_z.mod" age 6.7 #give the age here in millions of years
+c
+##################
+###Abundances
+##################
+c
+abundances Orion
+c
+##################
+####Boundary condition
+##################
+c
+iterate to convergence max = 7
+stop column density = 23
+stop zone 1
+c
+##################
+####Output
+##################
+c
+print last #prints the last of the iterations
+set save prefix "highres_baseline_1"
+save grid ".grd" last no hash
+save continuum ".con" last no hash units microns
+save overview ".ovr" last no hash 
+save cooling "sfcloud.cool" last
+save heating "sfcloud.heat" last
