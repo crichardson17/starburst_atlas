@@ -416,10 +416,10 @@ print "data arraged"
 
 desired = [36,37,53,56, 
 			52,61,63,64,
-			41,43,47,60,
+			41,43,58,60,
 				68,69,70,72]
 			#this is where you should specify which lines you'd like to plot
-
+plt.clf()
 for i in range(16):
 	add_sub_plot(i,desired[i-1]) #add our subplots with desired lines (calls routine add subplot)
 
