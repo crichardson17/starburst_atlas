@@ -25,7 +25,7 @@ import time
 # ------------------------------------------------------------------------------------------------------
 # keep track of how long the code takes to run 
 t0 = time.clock()
-headerloc = "/Users/helen/Documents/git_atlas_complete/headers_dir/headers.txt"
+headerloc = "/Users/helen/Documents/Thesis_Research/SF_MASTER/git_atlas_complete/headers_dir/headers.txt"
 # ------------------------------------------------------------------------------------------------------
 #input data files loaded in here
         
@@ -391,7 +391,7 @@ ydustfree = gridarraydustfree[:,1]
 xdusty = gridarraydusty[:,0]
 ydusty = gridarraydusty[:,1]
 
-line = [[165,7,10,18],
+line = [[0,165,7,18],
 		[19,27,32,34]]
 
 #create z array for this plot
