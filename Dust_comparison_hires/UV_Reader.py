@@ -115,9 +115,21 @@ def add_sub_plot_dustfree(eline,sub_num, set, rows):
 	z_subnum_dustfree = z_total_dustfree[set]
 	z_line_dustfree = z_subnum_dustfree[:,:,eline]
 	
-	contour = plt.contour(x_axis_dustfree, y_axis_dustfree, z_line_dustfree, levels, colors='c', linestyles = 'dashed', extent=extent) #teal contours, dashed
-	contour2 = plt.contour(x_axis_dustfree, y_axis_dustfree, z_line_dustfree, levels2, colors='k', linewidths=1.5) #black contours, solid
-	
+	contour1 = plt.contour(x_axis_dustfree, y_axis_dustfree, z_line_dustfree, levels, colors='k', origin='lower', extent=extent) #teal contours, dashed
+	contourmap = plt.imshow(z_line_dustfree, cmap='Reds', extent= extent, aspect = "auto",origin='lower', vmin=0, vmax =4)
+
+	if sub_num == 4:
+		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
+		cb.ax.tick_params(labelsize=10) 
+	if sub_num == 8:
+		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
+		cb.ax.tick_params(labelsize=10) 	
+	if sub_num == 12:
+		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
+		cb.ax.tick_params(labelsize=10) 	
+	if sub_num == 16:
+		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
+		cb.ax.tick_params(labelsize=10) 	
 
 	plt.scatter(max_values_dustfree[line[set][eline],2], max_values_dustfree[line[set][eline],3], c ='k',marker = '*')
 	if set ==2:
@@ -162,8 +174,21 @@ def add_sub_plot_dusty(eline,sub_num, set,rows):
 	z_subnum_dusty = z_total_dusty[set]
 	z_line_dusty = z_subnum_dusty[:,:,eline]
 	
-	contour = plt.contour(x_axis_dusty, y_axis_dusty, z_line_dusty, levels, colors='c', linestyles = 'dashed', extent=extent) #teal contours, dashed
-	contour2 = plt.contour(x_axis_dusty, y_axis_dusty, z_line_dusty, levels2, colors='k', linewidths=1.5) #black contours, solid
+	contour1 = plt.contour(x_axis_dusty, y_axis_dusty, z_line_dusty, levels, colors='k', origin='lower', extent=extent) #teal contours, dashed
+	contourmap = plt.imshow(z_line_dusty, cmap='Reds', extent= extent, aspect = "auto",origin='lower', vmin=0, vmax =4)
+
+	if sub_num == 4:
+		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
+		cb.ax.tick_params(labelsize=10) 
+	if sub_num == 8:
+		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
+		cb.ax.tick_params(labelsize=10) 	
+	if sub_num == 12:
+		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
+		cb.ax.tick_params(labelsize=10) 	
+	if sub_num == 16:
+		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
+		cb.ax.tick_params(labelsize=10) 
 	
 	plt.scatter(max_values_dusty[line[set][eline],2], max_values_dusty[line[set][eline],3], c ='k',marker = '*')
 	if set ==2:
@@ -435,8 +460,8 @@ z_total_dusty = [z_new0_dusty,z_new1_dusty]
 #plot
 plt.subplots_adjust(wspace=0, hspace=.4)
  #remove space between plots
-levels = arange(10**-1,10, .2)
-levels2 = arange(10**-2,10**2, 1)
+#levels = arange(10**-1,10, .2)
+levels = arange(10**-2,10**2, 1)
 # ---------------------------------------------------
 
 counter =1

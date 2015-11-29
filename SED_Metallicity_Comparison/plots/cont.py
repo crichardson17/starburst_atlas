@@ -613,7 +613,7 @@ y36  = double(datastarburst36[:4049,1])
 
 #-------------------------------------------------------------
 
-plt.suptitle("SED Comparison", fontsize='30')
+#plt.suptitle("SED Comparison", fontsize='30')
 
 sp1 = plt.subplot(321) #rows columns location of this parcticular plot
 
@@ -629,14 +629,14 @@ p40 = plt.plot(x,y40, '0.75', linewidth=.75, label="8 Myr")
 
 plt.xlim(10**1, 10**2)
 plt.ylim(10**0, 10**6)
-plt.yticks(fontsize=18)
+plt.yticks(fontsize=16)
 #plt.xticks(fontsize=15)
 plt.legend(prop={'size':11})
 plt.xscale('log')
 plt.yscale('log')
 sp1.set_xticklabels([])
 
-plt.ylabel(r'$4 \pi \nu J_\nu$ (erg $\mathrm{s}^{-1} \mathrm{cm} ^ {-2})$', fontsize=18)
+plt.ylabel(r'$4 \pi \nu J_\nu$ ($\rm{erg}$ $\mathrm{s}^{-1} \mathrm{cm} ^ {-2})$', fontsize=18)
 
 sp1.text(.5,.9,"Padova Track Instantaneous",horizontalalignment="center", transform = sp1.transAxes, fontsize = 16)
 
@@ -699,13 +699,13 @@ p31 = plt.plot(x3,y32, '0.75', linewidth=.75, label="8 Myr")
 
 plt.xlim(10**1, 10**2)
 plt.ylim(10**0, 10**6)
-plt.yticks(fontsize=18)
+plt.yticks(fontsize=16)
 #plt.xticks(fontsize=15)
 plt.legend(prop={'size':11})
 plt.xscale('log')
 plt.yscale('log')
 sp3.set_xticklabels([])
-plt.ylabel(r'$4 \pi \nu J_\nu$ (erg $\mathrm{s}^{-1} \mathrm{cm} ^ {-2})$', fontsize=18)
+plt.ylabel(r'$4 \pi \nu J_\nu$ ($\rm{erg}$ $\mathrm{s}^{-1} \mathrm{cm} ^ {-2})$', fontsize=18)
 
 sp3.text(.5,.8,"Geneva Track Instantaneous with Rotation \n 0.002 Metallicity",horizontalalignment="center", transform = sp3.transAxes, fontsize = 16)
 
@@ -772,14 +772,14 @@ p28 = plt.plot(x5,y28, '.75', linewidth=.75, label="8 Myr")
 
 plt.xlim(10**1, 10**2)
 plt.ylim(10**0, 10**6)
-plt.yticks(fontsize=18)
-plt.xticks(fontsize=18)
+plt.yticks(fontsize=16)
+plt.xticks(fontsize=16)
 plt.legend(prop={'size':11})
 plt.xscale('log')
 plt.yscale('log')
 
-plt.xlabel(r'$h$$\nu$ (eV)', fontsize = 18)
-plt.ylabel(r'$4 \pi \nu J_\nu$ (erg $\mathrm{s}^{-1} \mathrm{cm} ^ {-2})$', fontsize=18)
+plt.xlabel(r'$h$$\nu$ ($\rm{eV}$)', fontsize = 18)
+plt.ylabel(r'$4 \pi \nu J_\nu$ ($\rm{erg}$ $\mathrm{s}^{-1} \mathrm{cm} ^ {-2})$', fontsize=18)
 
 sp5.text(.5,.8,"Geneva Track Instantaneous with Rotation \n 0.008 Metallicity",horizontalalignment="center", transform = sp5.transAxes, fontsize = 16)
 
@@ -812,13 +812,13 @@ p26 = plt.plot(x2,y26, '.75', linewidth=.75, label="8 Myr")
 plt.xlim(10**1, 10**2)
 plt.ylim(10**0, 10**6)
 #plt.yticks(fontsize=18)
-plt.xticks(fontsize=18)
+plt.xticks(fontsize=16)
 plt.legend(prop={'size':11})
 plt.xscale('log')
 plt.yscale('log')
 #sp6.set_xticklabels([])
 sp6.set_yticklabels([])
-plt.xlabel(r'$h$$\nu$ (eV)', fontsize = 18)
+plt.xlabel(r'$h$$\nu$ ($\rm{eV}$)', fontsize = 18)
 sp6.text(.5,.8,"Geneva Track Continuous with Rotation \n 0.008 Metallicity",horizontalalignment="center", transform = sp6.transAxes, fontsize = 16)
 
 
@@ -853,8 +853,8 @@ sp6.text(.5,.8,"Geneva Track Continuous with Rotation \n 0.008 Metallicity",hori
 
 #plt.savefig('continuum_padovacont.eps', figsize=(30,10))
 #plt.clf()
-plt.savefig('continuum.png')
-plt.savefig('continuum.ps')
+#plt.savefig('continuum.png')
+#plt.savefig('continuum.ps')
 plt.savefig('continuum.pdf')
 
 #plt.show()
