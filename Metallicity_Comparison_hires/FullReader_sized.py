@@ -25,7 +25,7 @@ import time
 # ------------------------------------------------------------------------------------------------------
 # keep track of how long the code takes to run 
 t0 = time.clock()
-headerloc = "/Users/helen/Documents/git_atlas_complete/headers_dir/headers.txt"
+headerloc = "/Users/helen/Documents/Thesis_Research/github_repo/starburst_atlas/headers_dir/headers.txt"
 # ------------------------------------------------------------------------------------------------------
 #input data files loaded in here
         
@@ -132,8 +132,9 @@ def add_sub_plot_subsolar(eline,sub_num, set,rows):
 	z_subnum_subsolar = z_total_subsolar[set]
 	z_line_subsolar = z_subnum_subsolar[:,:,eline]
 	
-	contour = plt.contour(x_axis_subsolar, y_axis_subsolar, z_line_subsolar, levels, colors='c', linestyles = 'dashed', extent=extent) #teal contours, dashed
-	contour2 = plt.contour(x_axis_subsolar, y_axis_subsolar, z_line_subsolar, levels2, colors='k', linewidths=1.5) #black contours, solid
+	contour1 = plt.contour(x_axis_subsolar, y_axis_subsolar, z_line_subsolar, levels, colors='k', origin='lower', extent=extent) #teal contours, dashed
+	contourmap = plt.imshow(z_line_subsolar, cmap='Reds', extent= extent, aspect = "auto",origin='lower', vmin=0, vmax =4)
+
 	
 	plt.scatter(max_values_subsolar[line[set][eline],2], max_values_subsolar[line[set][eline],3], c ='k',marker = '*')
 	if set ==2:
@@ -158,6 +159,8 @@ def add_sub_plot_subsolar(eline,sub_num, set,rows):
 	if sub_num in [13] : 
 		plt.xlabel('Log($n _{\mathrm{H}}  $)')
 		plt.tick_params(labelbottom = 'on')
+		plt.xticks(arange(xt_min,xt_max,1), fontsize = 10)		
+
 #SOLAR
 def add_sub_plot_solar(eline,sub_num, set, rows):
 
@@ -166,8 +169,8 @@ def add_sub_plot_solar(eline,sub_num, set, rows):
 	z_subnum_solar = z_total_solar[set]
 	z_line_solar = z_subnum_solar[:,:,eline]
 	
-	contour = plt.contour(x_axis_solar, y_axis_solar, z_line_solar, levels, colors='c', linestyles = 'dashed', extent=extent) #teal contours, dashed
-	contour2 = plt.contour(x_axis_solar, y_axis_solar, z_line_solar, levels2, colors='k', linewidths=1.5) #black contours, solid
+	contour1 = plt.contour(x_axis_solar, y_axis_solar, z_line_solar, levels, colors='k', origin='lower', extent=extent) #teal contours, dashed
+	contourmap = plt.imshow(z_line_solar, cmap='Reds', extent= extent, aspect = "auto",origin='lower', vmin=0, vmax =4)
 	
 
 	plt.scatter(max_values_solar[line[set][eline],2], max_values_solar[line[set][eline],3], c ='k',marker = '*')
@@ -192,6 +195,10 @@ def add_sub_plot_solar(eline,sub_num, set, rows):
 	plt.yticks(arange(yt_min+1,yt_max,2),fontsize=10)
 	plt.xticks(arange(xt_min+1,xt_max,1), fontsize = 10)
 	plt.tick_params(labelleft = 'off')
+	if sub_num in [14] : 
+		plt.xlabel('Log($n _{\mathrm{H}}  $)')
+		plt.tick_params(labelbottom = 'on')
+		plt.xticks(arange(xt_min,xt_max,1), fontsize = 10)		
 
 #SUPERSOLAR
 def add_sub_plot_supersolar(eline,sub_num,set, rows):
@@ -201,9 +208,8 @@ def add_sub_plot_supersolar(eline,sub_num,set, rows):
 	z_subnum_supersolar = z_total_supersolar[set]
 	z_line_supersolar = z_subnum_supersolar[:,:,eline]
 	
-	contour = plt.contour(x_axis_supersolar, y_axis_supersolar, z_line_supersolar, levels, colors='c', linestyles = 'dashed', extent=extent) #teal contours, dashed
-	contour2 = plt.contour(x_axis_supersolar, y_axis_supersolar, z_line_supersolar, levels2, colors='k', linewidths=1.5) #black contours, solid
-	
+	contour1 = plt.contour(x_axis_supersolar, y_axis_supersolar, z_line_supersolar, levels, colors='k', origin='lower', extent=extent) #teal contours, dashed
+	contourmap = plt.imshow(z_line_supersolar, cmap='Reds', extent= extent, aspect = "auto",origin='lower', vmin=0, vmax =4)
 
 	plt.scatter(max_values_supersolar[line[set][eline],2], max_values_supersolar[line[set][eline],3], c ='k',marker = '*')
 	if set ==2:
@@ -229,7 +235,11 @@ def add_sub_plot_supersolar(eline,sub_num,set, rows):
 	plt.yticks(arange(yt_min+1,yt_max,2),fontsize=10)
 	plt.xticks(arange(xt_min+1,xt_max,1), fontsize = 10)
 	plt.tick_params(labelleft = 'off')
-		
+	if sub_num in [15] : 
+		plt.xlabel('Log($n _{\mathrm{H}}  $)')
+		plt.tick_params(labelbottom = 'on')		
+		plt.xticks(arange(xt_min,xt_max+1,1), fontsize = 10)		
+
 # ---------------------------------------------------
 #this is where the grid information (phi and hdens) is read in and saved to grid. 
 
@@ -496,7 +506,7 @@ ysupersolar = gridarraysupersolar[:,1]
 #change desired lines here!
 line = [[1,3,7,18],
 		[41,43,57,61],
-		[76,87,101,106]]
+		[76,87,112,111]]
 
 #create z array for this plot
 zsolar = [None] * (len(line))
@@ -552,8 +562,8 @@ z_total_supersolar = [z_new0_supersolar,z_new1_supersolar,z_new2_supersolar]
 #---------------------------------------------------
 #plot
 plt.subplots_adjust(wspace=0, hspace=0) #remove space between plots
-levels = arange(10**-1,10, .2)
-levels2 = arange(10**-2,10**2, 1)
+#levels = arange(10**-1,10, .2)
+levels = arange(10**-2,10**2, 1)
 # ---------------------------------------------------
 plotnames = ["UV_MetallicityComp.pdf", "Optical_MetallicityComp.pdf","IR_MetallicityComp.pdf"] 
 
