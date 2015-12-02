@@ -112,8 +112,8 @@ path3 = Path(verts3, codes)
 #the routine to add patches for others peoples' data onto our plots. 
 def add_patches(ax):
 	patch3 = patches.PathPatch(path3, facecolor='yellow', lw=0)
-	patch2 = patches.PathPatch(path2, facecolor='green', lw=0)
-	patch = patches.PathPatch(path, facecolor='red', lw=0)
+	patch2 = patches.PathPatch(path2, facecolor='blue', lw=0)
+	patch = patches.PathPatch(path, facecolor='grey', lw=0)
 	ax1.add_patch(patch3)
 	ax1.add_patch(patch2)
 	ax1.add_patch(patch)
@@ -576,6 +576,9 @@ for i in range(3):
 		add_sub_plot_solar(counter,j+1,i,4)
 		add_sub_plot_supersolar(counter,j+2,i,4)
 		counter += 1
+		ax1 = plt.subplot(4,4,j)
+		add_patches(ax1)
+
 	print "plot saving"
 	plt.savefig(plotnames[i])
 	print "plot saved"

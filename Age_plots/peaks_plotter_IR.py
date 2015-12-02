@@ -41,23 +41,23 @@ def add_sub_plot(sub_num, desiredline):
 	if sub_num in [1, 2,3,4]:
 		plt.tick_params(labelleft = 'off')
 		plt.tick_params(labelbottom = 'on')
-		plt.xlabel('Age (My)', fontsize=8)
+		plt.xlabel('Age (Myr)', fontsize=6)
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
 
 
 	if sub_num in [5,6,7,8]:
 		plt.tick_params(labelleft = 'off')
-		plt.xlabel('Age (My)', fontsize=8)
+		plt.xlabel('Age (Myr)', fontsize=6)
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
 
 
 	if sub_num == 1:
-		plt.ylabel('log($W _{\lambda}$)', fontsize=8)
+		plt.ylabel('log($W _{\lambda}$)', fontsize=6)
 		plt.tick_params(labelleft = 'on')
 
 	if sub_num == 5:
-		plt.xlabel('Age (My)', fontsize=8)
-		plt.ylabel('log($W _{\lambda}$)', fontsize=8)
+		plt.xlabel('Age (Myr)', fontsize=6)
+		plt.ylabel('log($W _{\lambda}$)', fontsize=6)
 		plt.tick_params(labelleft = 'on')
 
 	if sub_num in [4,8]:

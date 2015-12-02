@@ -575,6 +575,8 @@ for i in range(3):
 		add_sub_plot_solar(counter,j+1,i,4)
 		add_sub_plot_supersolar(counter,j+2,i,4)
 		counter += 1
+		ax1 = plt.subplot(4,4,j)
+		add_patches(ax1)
 	print "plot saving"
 	plt.savefig(plotnames[i])
 	print "plot saved"

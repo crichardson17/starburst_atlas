@@ -31,6 +31,8 @@ def add_sub_plot(sub_num, desiredline):
 	plt.plot(xvals, peaksgeninst[desiredline], c =color3, linestyle='dashed', label = "Geneva Instantaneous")
 
 	#plt.legend(prop={'size':4}, loc=3)
+	if sub_num == 2:
+		figtext(.5,.95,'UV Emission Lines', fontsize=8, ha='center')
 
 	plt.xlim(min(xvals),max(xvals))
 	plt.ylim(0,4.5) 
@@ -41,13 +43,13 @@ def add_sub_plot(sub_num, desiredline):
 	if sub_num in [1, 2,3,4]:
 		plt.tick_params(labelleft = 'off')
 		plt.tick_params(labelbottom = 'on')
-		plt.xlabel('Age (My)', fontsize=6)
+		plt.xlabel('Age (Myr)', fontsize=6)
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
 
 
 	if sub_num in [5,6,7,8]:
 		plt.tick_params(labelleft = 'off')
-		plt.xlabel('Age (My)', fontsize=6)
+		plt.xlabel('Age (Myr)', fontsize=6)
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
 
 	if sub_num == 1:
@@ -55,7 +57,7 @@ def add_sub_plot(sub_num, desiredline):
 		plt.tick_params(labelleft = 'on')
 
 	if sub_num == 5:
-		plt.xlabel('Age (My)', fontsize=6)
+		plt.xlabel('Age (Myr)', fontsize=6)
 		plt.ylabel('log($W _{\lambda}$)', fontsize=6)
 		plt.tick_params(labelleft = 'on')
 
@@ -391,7 +393,7 @@ add_sub_plot(5,desired[4])
 add_sub_plot(6,desired[5])
 add_sub_plot(7,desired[6])
 add_sub_plot(8,desired[7])
-plt.suptitle("Peak Equivalent Widths UV", fontsize = 15)
+#plt.suptitle("Peak Equivalent Widths UV", fontsize = 15)
 plt.savefig('Peak_Eqwidths_UV.pdf')
 
 print "plot saved and complete"

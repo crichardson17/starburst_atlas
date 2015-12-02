@@ -42,14 +42,14 @@ def add_sub_plot(sub_num, desiredline):
 	if sub_num in [1, 2,3,4]:
 		plt.tick_params(labelleft = 'off')
 		plt.tick_params(labelbottom = 'on')
-		plt.xlabel('Age (My)', fontsize=8)
+		plt.xlabel('Age (Myr)', fontsize=6)
 		plt.ylim(0,1.5) 
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
 
 
 	if sub_num in [6,7,8,0]:
 		plt.tick_params(labelleft = 'off')
-		plt.xlabel('Age (My)', fontsize=8)
+		plt.xlabel('Age (Myr)', fontsize=6)
 		plt.ylim(0,2.5) 
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
 
@@ -58,33 +58,34 @@ def add_sub_plot(sub_num, desiredline):
 		plt.tick_params(labelbottom = 'on')
 		plt.ylim(0, 4) 
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
+		plt.xlabel('Age (Myr)', fontsize=6)
 
 	if sub_num in [13, 14, 15, 16,0]:
 		plt.tick_params(labelleft = 'off')
 		plt.tick_params(labelbottom = 'on')
 		plt.ylim(0, 4,) 
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
-		plt.xlabel('Age (My)', fontsize=8)
+		plt.xlabel('Age (Myr)', fontsize=6)
 
 
 	if sub_num in [9]:
 		plt.tick_params(labelleft = 'on')
-		plt.ylabel('log($W _{\lambda}$)', fontsize=8)
+		plt.ylabel('log($W _{\lambda}$)', fontsize=6)
 
 	if sub_num in [13]:
 		plt.tick_params(labelleft = 'on')
 		plt.tick_params(labelbottom = 'on')
-		plt.ylabel('log($W _{\lambda}$)', fontsize=8)
-		plt.xlabel('Age (My)', fontsize=8)
+		plt.ylabel('log($W _{\lambda}$)', fontsize=6)
+		plt.xlabel('Age (Myr)', fontsize=6)
 
 
 	if sub_num == 1:
-		plt.ylabel('log($W _{\lambda}$)', fontsize=8)
+		plt.ylabel('log($W _{\lambda}$)', fontsize=6)
 		plt.tick_params(labelleft = 'on')
 
 	if sub_num == 5:
-		plt.xlabel('Age (My)', fontsize=8)
-		plt.ylabel('log($W _{\lambda}$)', fontsize=8)
+		plt.xlabel('Age (Myr)', fontsize=6)
+		plt.ylabel('log($W _{\lambda}$)', fontsize=6)
 		plt.ylim(0,2.5) 
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
 	if sub_num in [4,8,12,16]:
