@@ -49,6 +49,11 @@ def add_sub_plot(sub_num, desiredline):
 		plt.tick_params(labelleft = 'off')
 		plt.xlabel('Age (Myr)', fontsize=6)
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
+	
+	if sub_num in [9,10,11,12]:
+		plt.tick_params(labelleft = 'off')
+		plt.xlabel('Age (Myr)', fontsize=6)
+		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
 
 
 	if sub_num == 1:
@@ -60,16 +65,26 @@ def add_sub_plot(sub_num, desiredline):
 		plt.ylabel('log($W _{\lambda}$)', fontsize=6)
 		plt.tick_params(labelleft = 'on')
 
-	if sub_num in [4,8]:
+	if sub_num == 9:
+		plt.xlabel('Age (Myr)', fontsize=6)
+		plt.ylabel('log($W _{\lambda}$)', fontsize=6)
+		plt.tick_params(labelleft = 'on')
+
+	if sub_num in [4,8,12]:
 		plt.xticks(arange(0,9,1),fontsize=6)
 	
 
 	if sub_num == 6:
 		figtext(.5,.95,'Strong IR Emission Lines', fontsize=8, ha='center')
+	if sub_num == 10:
+		figtext(.5,.485,'Fine Structure Lines', fontsize=8, ha='center')
+	
 	if sub_num == 1:
 		plt.legend(bbox_to_anchor=(0., 1.2, 4., 0), loc=1, ncol=4, mode="expand", prop={'size':6}, borderaxespad=0.)
 
 	if sub_num == 5:
+		plt.legend(bbox_to_anchor=(0., 1.2, 4., 0), loc=1, ncol=4, mode="expand", prop={'size':6}, borderaxespad=0.)
+	if sub_num == 9:
 		plt.legend(bbox_to_anchor=(0., 1.2, 4., 0), loc=1, ncol=4, mode="expand", prop={'size':6}, borderaxespad=0.)
 
 
@@ -120,43 +135,42 @@ for file in os.listdir('.'):
     	inputfile21 = file
 
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovainst0"):
+    if file.endswith("peaks_Padovainst0"):
     	inputfile10 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovainst2"):
+    if file.endswith("peaks_Padovainst2"):
     	inputfile11 = file  
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovainst4"):
+    if file.endswith("peaks_Padovainst4"):
     	inputfile12 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovainst5"):
+    if file.endswith("peaks_Padovainst5"):
     	inputfile13 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovainst6"):
+    if file.endswith("peaks_Padovainst6"):
     	inputfile14 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovainst8"):
+    if file.endswith("peaks_Padovainst8"):
     	inputfile22 = file
 
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovacont0"):
+    if file.endswith("peaks_Padovacont0"):
         inputfile15 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovacont2"):
+    if file.endswith("peaks_Padovacont2"):
         inputfile16 = file  
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovacont4"):
+    if file.endswith("peaks_Padovacont4"):
         inputfile17 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovacont5"):
+    if file.endswith("peaks_Padovacont5"):
         inputfile18 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovacont6"):
+    if file.endswith("peaks_Padovacont6"):
         inputfile19 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovacont8"):
+    if file.endswith("peaks_Padovacont8"):
         inputfile23 = file
-
 
 for file in os.listdir('.'):
     if file.endswith(".txt"):
@@ -381,11 +395,16 @@ xvals = [0,2,4,5,6,8]
 
 print "data arraged"
 
-desired = [75,76,78,79,84,86,87,88] #this is where you should specify which lines you'd like to plot
+desired = [76,77,79,80,
+85,87,88,89, 
+104, 102, 105, 98] #this is where you should specify which lines you'd like to plot
+
+
+
 
 #for i in range(8):
 #	add_sub_plot(i,desired[i-1]) #add our subplots with desired lines (calls routine add subplot)
-
+plt.clf()
 add_sub_plot(1,desired[0])
 add_sub_plot(2,desired[1])
 add_sub_plot(3,desired[2])
@@ -394,6 +413,10 @@ add_sub_plot(5,desired[4])
 add_sub_plot(6,desired[5])
 add_sub_plot(7,desired[6])
 add_sub_plot(8,desired[7])
+add_sub_plot(9,desired[8])
+add_sub_plot(10,desired[9])
+add_sub_plot(11,desired[10])
+add_sub_plot(12,desired[11])
 
 #plt.suptitle("Peak Equivalent Widths IR", fontsize = 15)
 plt.savefig('Peak_Eqwidths_IR.pdf')

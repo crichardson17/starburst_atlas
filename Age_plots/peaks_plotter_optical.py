@@ -130,7 +130,6 @@ for file in os.listdir('.'):
 for file in os.listdir('.'):
     if file.endswith("peaks_Genevacont6"):
     	inputfile4 = file
-
 for file in os.listdir('.'):
     if file.endswith("peaks_Genevacont8"):
     	inputfile20 = file
@@ -155,43 +154,42 @@ for file in os.listdir('.'):
     	inputfile21 = file
 
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovainst0"):
+    if file.endswith("peaks_Padovainst0"):
     	inputfile10 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovainst2"):
+    if file.endswith("peaks_Padovainst2"):
     	inputfile11 = file  
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovainst4"):
+    if file.endswith("peaks_Padovainst4"):
     	inputfile12 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovainst5"):
+    if file.endswith("peaks_Padovainst5"):
     	inputfile13 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovainst6"):
+    if file.endswith("peaks_Padovainst6"):
     	inputfile14 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovainst8"):
+    if file.endswith("peaks_Padovainst8"):
     	inputfile22 = file
 
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovacont0"):
+    if file.endswith("peaks_Padovacont0"):
         inputfile15 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovacont2"):
+    if file.endswith("peaks_Padovacont2"):
         inputfile16 = file  
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovacont4"):
+    if file.endswith("peaks_Padovacont4"):
         inputfile17 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovacont5"):
+    if file.endswith("peaks_Padovacont5"):
         inputfile18 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovacont6"):
+    if file.endswith("peaks_Padovacont6"):
         inputfile19 = file
 for file in os.listdir('.'):
-    if file.endswith("peaks_padovacont8"):
+    if file.endswith("peaks_Padovacont8"):
         inputfile23 = file
-
 
 for file in os.listdir('.'):
     if file.endswith(".txt"):
@@ -415,10 +413,10 @@ xvals = [0,2,4,5,6,8]
 
 print "data arraged"
 
-desired = [36,37,53,56, 
-			52,61,63,64,
-			41,43,58,60,
-				68,69,70,72]
+desired = [36,37,53,57, 
+			52,62,64,65,
+			41,43,59,61,
+				69,70,71,73]
 			#this is where you should specify which lines you'd like to plot
 plt.clf()
 for i in range(16):
