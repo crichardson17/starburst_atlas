@@ -1,0 +1,6 @@
+--------------------------------------------------------------------------
+mpirun noticed that the job aborted, but has no info as to the process
+that caused that situation.
+--------------------------------------------------------------------------
+Nodes:        trestles-12-11 trestles-2-12 trestles-2-9 trestles-4-12 
+trestles-5-6 trestles-8-18 trestles-9-17 trestles-9-22 trestles-9-6 trestles-9-7

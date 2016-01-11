@@ -1,5 +1,0 @@
-#!/usr/bin/bash
-
-# this is a script to run all my plotting files (python) and peak files. These will run only if each completes successfully
-cp ~/Documents/Thesis_Research/cloudy/runs/Grid_codes/* .//
-python Optical1.py && python Optical2.py && python UV1.py && python UV2.py && python IR.py && python peaks_reader.py
