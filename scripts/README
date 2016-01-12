@@ -1,0 +1,2 @@
+The Baseline scripts assume a Padova continuous evolution 5 Myr dusty model. 
+The slices are the cloudy input files, though we usually break up the grid slices further for a faster run time. The LineList_HII.dat gives the emission lines we track. The submission script is our submission script to use on Comet supercomputer. The Baseline plotter is the contour plot code we use to plot a baseline simulation. 
