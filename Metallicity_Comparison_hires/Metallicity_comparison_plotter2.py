@@ -504,7 +504,7 @@ ysupersolar = gridarraysupersolar[:,1]
 
 #change desired lines here!
 line = [[19,34],
-		[67,71],
+		[67,68],
 		[106,101]]
 
 #create z array for this plot
