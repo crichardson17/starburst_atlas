@@ -125,92 +125,93 @@ numFiles = 5
 gridFiles = [None]*numFiles
 emissionFiles = [None]*numFiles
 
+os.chdir("./data")
+
 #input files
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Genevacont0"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Geneva_cont_0"):
     	inputfile0 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Genevacont2"):
+    	print file
+for file in os.listdir('./'):
+    if file.endswith("peaks_Geneva_cont_2"):
     	inputfile1 = file  
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Genevacont4"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Geneva_cont_4"):
     	inputfile2 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Genevacont5"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Geneva_cont_5"):
     	inputfile3 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Genevacont6"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Geneva_cont_6"):
     	inputfile4 = file
 
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Genevacont8"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Geneva_cont_8"):
     	inputfile20 = file
 
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Genevainst0"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Geneva_inst_0"):
     	inputfile5 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Genevainst2"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Geneva_inst_2"):
     	inputfile6 = file  
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Genevainst4"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Geneva_inst_4"):
     	inputfile7 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Genevainst5"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Geneva_inst_5"):
     	inputfile8 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Genevainst6"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Geneva_inst_6"):
     	inputfile9 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Genevainst8"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Geneva_inst_8"):
     	inputfile21 = file
 
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Padovainst0"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Padova_inst_0"):
     	inputfile10 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Padovainst2"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Padova_inst_2"):
     	inputfile11 = file  
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Padovainst4"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Padova_inst_4"):
     	inputfile12 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Padovainst5"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Padova_inst_5"):
     	inputfile13 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Padovainst6"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Padova_inst_6"):
     	inputfile14 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Padovainst8"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Padova_inst_8"):
     	inputfile22 = file
 
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Padovacont0"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Padova_cont_0"):
         inputfile15 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Padovacont2"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Padova_cont_2"):
         inputfile16 = file  
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Padovacont4"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Padova_cont_4"):
         inputfile17 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Padovacont5"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Padova_cont_5"):
         inputfile18 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Padovacont6"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Padova_cont_6"):
         inputfile19 = file
-for file in os.listdir('./data'):
-    if file.endswith("peaks_Padovacont8"):
+for file in os.listdir('./'):
+    if file.endswith("peaks_Padova_cont_8"):
         inputfile23 = file
 # importing headers file
 
-for file in os.listdir('./'):
+for file in os.listdir('../'):
     if file.endswith(".txt"):
     	headers = file
 
 # ---------------------------------------------------
-
-os.chdir("./data")
 
 lines0 = [];
 with open(inputfile0, 'rb') as f:
