@@ -101,11 +101,12 @@ path3 = Path(verts3, codes)
 #the routine to add patches for others peoples' data onto our plots. 
 def add_patches(ax):
 	patch3 = patches.PathPatch(path3, facecolor='yellow', lw=0)
-	patch2 = patches.PathPatch(path2, facecolor='green', lw=0)
-	patch = patches.PathPatch(path, facecolor='red', lw=0)
-	ax1.add_patch(patch3)
-	ax1.add_patch(patch2)
-	ax1.add_patch(patch)
+	patch2 = patches.PathPatch(path2, facecolor='blue', lw=0)
+	patch = patches.PathPatch(path, facecolor='grey', lw=0)
+	ax.add_patch(patch3)
+	ax.add_patch(patch2)
+	ax.add_patch(patch)
+	
 # ------------------------------------------------------------------------------------------------------
 #Dust free
 def add_sub_plot_dustfree(eline,sub_num, set, rows):
@@ -474,6 +475,14 @@ for i in range (4):
 	add_sub_plot_dustfree(i,counter+4,1,4)
 	add_sub_plot_dusty(i,counter+8,1,4)
 	counter = counter + 1
+ax1 = plt.subplot(4,4,1)
+ax2 = plt.subplot(4,4,5)
+ax3 = plt.subplot(4,4,9)
+ax4 = plt.subplot(4,4,13)
+add_patches(ax1)
+add_patches(ax2)
+add_patches(ax3)
+add_patches(ax4)
 #plt.show()
 plt.savefig("Optical_Dust_Comparison.pdf")
 

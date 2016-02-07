@@ -54,27 +54,27 @@ def add_sub_plot(sub_num, desiredline):
 		plt.tick_params(labelleft = 'off')
 		plt.tick_params(labelbottom = 'on')
 		plt.xlabel('Age (Myr)', fontsize=6)
-		plt.ylim(0,1.5) 
+		plt.ylim(0,4.0) 
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
 
 
 	if sub_num in [6,7,8,0]:
 		plt.tick_params(labelleft = 'off')
 		plt.xlabel('Age (Myr)', fontsize=6)
-		plt.ylim(0,2.5) 
+		plt.ylim(0,4.0) 
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
 
 	if sub_num in [9, 10, 11, 12]:
 		plt.tick_params(labelleft = 'off')
 		plt.tick_params(labelbottom = 'on')
-		plt.ylim(0, 4) 
+		plt.ylim(0,2.5) 
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
 		plt.xlabel('Age (Myr)', fontsize=6)
 
 	if sub_num in [13, 14, 15, 16,0]:
 		plt.tick_params(labelleft = 'off')
 		plt.tick_params(labelbottom = 'on')
-		plt.ylim(0, 4,) 
+		plt.ylim(0,1.5) 
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
 		plt.xlabel('Age (Myr)', fontsize=6)
 
@@ -104,11 +104,11 @@ def add_sub_plot(sub_num, desiredline):
 	
 
 	if sub_num == 2:
-		figtext(.5,.95,'Weak Optical Emission Lines', fontsize=8, ha='center')
+		figtext(.5,.95,'Strong Optical Emission Lines', fontsize=8, ha='center')
 	if sub_num == 6:
-		figtext(.5,.705,'Intermediate Optical Emission Lines', fontsize=8, ha='center')
+		figtext(.5,.48,'Intermediate Optical Emission Lines', fontsize=8, ha='center')
 	if sub_num == 10:
-		figtext(.5,.48,'Strong Optical Emission Lines', fontsize=8, ha='center')
+		figtext(.5,.25,'Weak Optical Emission Lines', fontsize=8, ha='center')
 
 	if sub_num == 1:
 		plt.legend(bbox_to_anchor=(0., 1.2, 4., 0), loc=1, ncol=4, mode="expand", prop={'size':6}, borderaxespad=0.)
@@ -437,10 +437,10 @@ xvals = [0,2,4,5,6,8]
 print "data arraged"
 
 #below is where you should specify which lines you'd like to plot
-desired = [36,37,53,57,
+desired = [41,43,59,61,
+			69,70,71,73,
 			52,62,64,65,
-			41,43,59,61,
-			69,70,71,73]
+			36,37,53,57]
 
 plt.clf()
 for i in range(16):

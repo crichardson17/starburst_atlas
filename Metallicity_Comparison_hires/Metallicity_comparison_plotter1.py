@@ -145,6 +145,16 @@ def add_sub_plot_subsolar(eline,sub_num, set,rows):
 	plt.annotate(max_values_subsolar[line[set][eline],0], xy = (max_values_subsolar[line[set][eline],2], max_values_subsolar[line[set][eline],3]), xytext = (0, -10), textcoords = 'offset points', ha = 'right', va = 'bottom', fontsize=10)
 	if sub_num == 1:
 		plt.title("Subsolar (0.2 Z$\odot$)", fontsize = 12)
+	
+	if sub_num == 1:
+		plt.annotate("a)", xy=(8,11),  xytext=(0.5,21), fontsize = 10, fontweight='bold')
+	if sub_num == 5:
+		plt.annotate("b)", xy=(8,11),  xytext=(0.5,21), fontsize = 10,fontweight='bold')
+	if sub_num == 9:	
+		plt.annotate("c)", xy=(8,11),  xytext=(0.5,21), fontsize = 10,fontweight='bold')
+	if sub_num == 13:
+		plt.annotate("d)", xy=(8,11),  xytext=(0.5,21), fontsize = 10,fontweight='bold')
+
 	yt_min = 8
 	yt_max = 23
 
@@ -578,7 +588,6 @@ for i in range(3):
 		counter += 1
 		ax1 = plt.subplot(4,4,j)
 		add_patches(ax1)
-
 	print "plot saving"
 	plt.savefig(plotnames[i])
 	print "plot saved"

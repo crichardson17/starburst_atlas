@@ -105,6 +105,26 @@ def add_sub_plot(sub_num, elinesplot):
 	plt.annotate(headers[line[elinesplot][sub_num-1]], xy=(8,11),  xytext=(4,8.5), fontsize = 10)
 	plt.annotate(max_values[line[elinesplot][sub_num-1],0], xy = (max_values[line[elinesplot][sub_num-1],2], max_values[line[elinesplot][sub_num-1],3]), 
 		xytext = (0, -10), textcoords = 'offset points', ha = 'right', va = 'bottom', fontsize=10, color='k')
+	if elinesplot in (0,2,4,6):
+		if sub_num == 1:
+			plt.annotate("a)", xy=(8,11),  xytext=(0.5,21), fontsize = 10, fontweight='bold')
+		if sub_num == 5:
+			plt.annotate("b)", xy=(8,11),  xytext=(0.5,21), fontsize = 10,fontweight='bold')
+		if sub_num == 9:	
+			plt.annotate("c)", xy=(8,11),  xytext=(0.5,21), fontsize = 10,fontweight='bold')
+		if sub_num == 13:
+			plt.annotate("d)", xy=(8,11),  xytext=(0.5,21), fontsize = 10,fontweight='bold')
+	if elinesplot in (1,3,5,7):
+		if sub_num == 1:
+			plt.annotate("e)", xy=(8,11),  xytext=(0.5,21), fontsize = 10, fontweight='bold')
+		if sub_num == 5:
+			plt.annotate("f)", xy=(8,11),  xytext=(0.5,21), fontsize = 10,fontweight='bold')
+		if sub_num == 9:	
+			plt.annotate("g)", xy=(8,11),  xytext=(0.5,21), fontsize = 10,fontweight='bold')
+		if sub_num == 13:
+			plt.annotate("h)", xy=(8,11),  xytext=(0.5,21), fontsize = 10,fontweight='bold')
+
+
 	if sub_num == 4:
 		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
 		cb.ax.tick_params(labelsize=10) 
@@ -195,6 +215,7 @@ phi_values = grid[:,0]
 print("Import files complete")
 
 # ---------------------------------------------------
+
 #To fix when hdens > 10 
 #many of my grids were run off with hdens up to 12 so we needed to cut off part of the data 
 #first create temorary arrays 

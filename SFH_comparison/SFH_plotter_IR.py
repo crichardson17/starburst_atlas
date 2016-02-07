@@ -88,10 +88,8 @@ def add_sub_plot(sub_num, desiredline):
 	
 
 	if sub_num == 6:
-		figtext(.5,.95,'Strong IR Emission Lines', fontsize=8, ha='center')
-	if sub_num == 10:
-		figtext(.5,.485,'Fine Structure Lines', fontsize=8, ha='center')
-	
+		figtext(.5,.95,'IR Emission Lines', fontsize=8, ha='center')
+
 	if sub_num == 1:
 		plt.legend(bbox_to_anchor=(0., 1.2, 4., 0), loc=1, ncol=4, mode="expand", prop={'size':6}, borderaxespad=0.)
 

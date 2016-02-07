@@ -112,8 +112,8 @@ path3 = Path(verts3, codes)
 #the routine to add patches for others peoples' data onto our plots. 
 def add_patches(ax):
 	patch3 = patches.PathPatch(path3, facecolor='yellow', lw=0)
-	patch2 = patches.PathPatch(path2, facecolor='green', lw=0)
-	patch = patches.PathPatch(path, facecolor='red', lw=0)
+	patch2 = patches.PathPatch(path2, facecolor='blue', lw=0)
+	patch = patches.PathPatch(path, facecolor='grey', lw=0)
 	ax1.add_patch(patch3)
 	ax1.add_patch(patch2)
 	ax1.add_patch(patch)
@@ -148,6 +148,12 @@ def add_sub_plot_subsolar(eline,sub_num, set,rows):
 		plt.title("Subsolar (0.2 Z$\odot$)", fontsize = 12)
 	yt_min = 8
 	yt_max = 23
+
+	if sub_num == 1:
+		plt.annotate("e)", xy=(8,11),  xytext=(0.5,21), fontsize = 10, fontweight='bold')
+	if sub_num == 5:
+		plt.annotate("f)", xy=(8,11),  xytext=(0.5,21), fontsize = 10,fontweight='bold')
+	
 
 	xt_min = 0
 	xt_max = 10
