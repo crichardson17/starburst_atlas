@@ -53,7 +53,6 @@ def add_sub_plot(sub_num, desiredline):
 	plt.xticks(arange(0,8,1),fontsize=6)
 	plt.yticks(arange(0,4.5,.5),fontsize=6)
 
-
 	#some labels
 	if sub_num in [1,2,3,4]:
 		plt.tick_params(labelleft = 'off')

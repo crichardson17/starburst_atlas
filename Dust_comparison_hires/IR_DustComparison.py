@@ -131,6 +131,10 @@ def add_sub_plot_dustfree(eline,sub_num, set, rows):
 	if sub_num == 16:
 		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
 		cb.ax.tick_params(labelsize=10) 	
+	if sub_num == 1:
+		plt.annotate("a)", xy=(8,11),  xytext=(0.5,15.5), fontsize = 10, fontweight='bold')
+	if sub_num == 9:	
+		plt.annotate("c)", xy=(8,11),  xytext=(0.5,15.5), fontsize = 10,fontweight='bold')
 		
 	plt.scatter(max_values_dustfree[line[set][eline],2], max_values_dustfree[line[set][eline],3], c ='k',marker = '*')
 	if set ==2:
@@ -195,6 +199,10 @@ def add_sub_plot_dusty(eline,sub_num, set,rows):
 		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(4,8.5), fontsize = 10)
 	else:
 		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(4,8.5), fontsize = 10)
+	if sub_num == 5:
+		plt.annotate("b)", xy=(8,11),  xytext=(0.5,15.5), fontsize = 10,fontweight='bold')
+	if sub_num == 13:
+		plt.annotate("d)", xy=(8,11),  xytext=(0.5,15.5), fontsize = 10,fontweight='bold')
 
 	plt.annotate(max_values_dusty[line[set][eline],0], xy = (max_values_dusty[line[set][eline],2], max_values_dusty[line[set][eline],3]), xytext = (0, -10), textcoords = 'offset points', ha = 'right', va = 'bottom', fontsize=10)
 	if sub_num == 1:

@@ -132,6 +132,11 @@ def add_sub_plot_dustfree(eline,sub_num, set, rows):
 		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
 		cb.ax.tick_params(labelsize=10) 	
 
+	if sub_num == 1:
+		plt.annotate("a)", xy=(8,11),  xytext=(0.5,15.5), fontsize = 10, fontweight='bold')
+	if sub_num == 9:	
+		plt.annotate("c)", xy=(8,11),  xytext=(0.5,15.5), fontsize = 10,fontweight='bold')
+
 	plt.scatter(max_values_dustfree[line[set][eline],2], max_values_dustfree[line[set][eline],3], c ='k',marker = '*')
 	if set ==2:
 		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(4,8.5), fontsize = 10)
@@ -156,7 +161,6 @@ def add_sub_plot_dustfree(eline,sub_num, set, rows):
 	plt.yticks(arange(yt_min,yt_max+1,1),fontsize=10)
 	plt.xticks(arange(xt_min,xt_max,1), fontsize = 10)
 	
-
 	if sub_num == 3:
 		figtext(0.5,.915,'Dustfree', fontsize=12, ha='center')
 
@@ -191,6 +195,11 @@ def add_sub_plot_dusty(eline,sub_num, set,rows):
 		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
 		cb.ax.tick_params(labelsize=10) 
 	
+	if sub_num == 5:
+		plt.annotate("b)", xy=(8,11),  xytext=(0.5,15.5), fontsize = 10,fontweight='bold')
+	if sub_num == 13:
+		plt.annotate("d)", xy=(8,11),  xytext=(0.5,15.5), fontsize = 10,fontweight='bold')
+
 	plt.scatter(max_values_dusty[line[set][eline],2], max_values_dusty[line[set][eline],3], c ='k',marker = '*')
 	if set ==2:
 		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(4,8.5), fontsize = 10)
