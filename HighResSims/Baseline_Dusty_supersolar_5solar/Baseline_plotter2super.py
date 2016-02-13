@@ -317,7 +317,7 @@ levels = arange(10**-2,10**2, 1) #black levels
 #loop through desired plots and desired subplots
 print("Beginning plotting")
 plt.clf()
-for j in range (1): 
+for j in range (2): 
 	for i in range(16):
 		add_sub_plot(i,j)
 	ax1 = plt.subplot(4,4,1)

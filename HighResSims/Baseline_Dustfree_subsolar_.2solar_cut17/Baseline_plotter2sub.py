@@ -103,7 +103,7 @@ def add_sub_plot(sub_num, elinesplot):
 	contourmap = plt.imshow(z_line, cmap='Reds', extent= extent, aspect = "auto",origin='lower', vmin=0, vmax =4)
 
 	plt.scatter(max_values[line[elinesplot][sub_num-1],2], max_values[line[elinesplot][sub_num-1],3], c ='k',marker = '*')
-	plt.annotate(headers[line[elinesplot][sub_num-1]], xy=(8,11),  xytext=(7,9.5), fontsize = 10)
+	plt.annotate(headers[line[elinesplot][sub_num-1]], xy=(8,11),  xytext=(6.7,9.5), fontsize = 10)
 
 	plt.annotate("Dust-free 0.2 Z$\odot$", xy=(8,11),  xytext=(4.85,8.5), fontsize = 10)
 
@@ -306,7 +306,7 @@ levels = arange(10**-2,10**2, 1) #black levels
 #loop through desired plots and desired subplots
 print("Beginning plotting")
 plt.clf()
-for j in range (1): 
+for j in range (2): 
 	for i in range(16):
 		add_sub_plot(i,j)
 	ax1 = plt.subplot(4,4,1)
