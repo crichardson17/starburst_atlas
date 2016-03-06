@@ -104,9 +104,9 @@ def add_sub_plot(sub_num):
 	zion = rbf2(xion, yion)
 
 	#our contours. Teal for .2 dex and black for 1 dex
-	contour = plt.contour(xi,yi,zi, levels, colors='c', linestyles = 'dashed')
+	contour = plt.contour(xi,yi,zi, levels, colors='r', linestyles = 'dashed')
 	contour2 = plt.contour(xi,yi,zi, levels2, colors='k', linewidths=1.5)
-	contour3 = plt.contour(xion,yion, zion, levelsio, colors='r', linewidths = 1.5) #linestyles = 'dashed')
+	contour3 = plt.contour(xion,yion, zion, levelsio, colors='b', linewidths = 3) 
 
 	plt.clabel(contour2, inline=1, fontsize=10, fmt='%1.1f')
 	plt.clabel(contour3, inline=1, fontsize=10, fmt='%1.1f')
