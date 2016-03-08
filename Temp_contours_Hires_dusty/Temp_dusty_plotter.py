@@ -106,7 +106,7 @@ def add_sub_plot(sub_num):
 	#our contours. Teal for .2 dex and black for 1 dex
 	contour = plt.contour(xi,yi,zi, levels, colors='r', linestyles = 'dashed')
 	contour2 = plt.contour(xi,yi,zi, levels2, colors='k', linewidths=1.5)
-	contour3 = plt.contour(xion,yion, zion, levelsio, colors='b', linewidths = 3) 
+	contour3 = plt.contour(xion,yion, zion, levelsio, colors='c', linewidths = 3) 
 
 	plt.clabel(contour2, inline=1, fontsize=10, fmt='%1.1f')
 	plt.clabel(contour3, inline=1, fontsize=10, fmt='%1.1f')
