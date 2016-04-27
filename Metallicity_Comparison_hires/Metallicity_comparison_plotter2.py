@@ -159,7 +159,7 @@ def add_sub_plot_subsolar(eline,sub_num, set,rows):
 	xt_max = 10
 	plt.ylim(yt_min,yt_max)
 	plt.xlim(xt_min,xt_max) 
-	plt.yticks(arange(yt_min+1,yt_max,2),fontsize=10)
+	plt.yticks(arange(yt_min+1,yt_max,1),fontsize=10)
 	plt.xticks(arange(xt_min+1,xt_max,1), fontsize = 10)
 	if sub_num in [1,5] : 
 		plt.ylabel('Log ($ \phi  _{\mathrm{H}}  $)')
@@ -198,7 +198,7 @@ def add_sub_plot_solar(eline,sub_num, set, rows):
 	xt_max = 10
 	plt.ylim(yt_min,yt_max)
 	plt.xlim(xt_min,xt_max) 
-	plt.yticks(arange(yt_min+1,yt_max,2),fontsize=10)
+	plt.yticks(arange(yt_min+1,yt_max,1),fontsize=10)
 	plt.xticks(arange(xt_min+1,xt_max,1), fontsize = 10)
 	plt.tick_params(labelleft = 'off')
 	if sub_num in [6] : 
@@ -238,7 +238,7 @@ def add_sub_plot_supersolar(eline,sub_num,set, rows):
 	xt_max = 10
 	plt.ylim(yt_min,yt_max)
 	plt.xlim(xt_min,xt_max) 
-	plt.yticks(arange(yt_min+1,yt_max,2),fontsize=10)
+	plt.yticks(arange(yt_min+1,yt_max,1),fontsize=10)
 	plt.xticks(arange(xt_min+1,xt_max,1), fontsize = 10)
 	plt.tick_params(labelleft = 'off')
 	if sub_num in [7] : 
@@ -571,7 +571,7 @@ plt.subplots_adjust(wspace=0, hspace=0) #remove space between plots
 levels = arange(10**-2,10**2, 1)
 # ---------------------------------------------------
 
-plotnames = ["UV_continued.pdf", "Optical_Continued.pdf","IR_Continued.pdf"] 
+plotnames = ["UV_continued_nopatch.pdf", "Optical_Continued_nop.pdf","IR_Continued_nop.pdf"] 
 subplots_ref2 = [1,5]
 for i in range(3):
 	counter = 0
@@ -581,8 +581,7 @@ for i in range(3):
 		add_sub_plot_solar(counter,j+1,i,4)
 		add_sub_plot_supersolar(counter,j+2,i,4)
 		counter += 1
-		ax1 = plt.subplot(4,4,j)
-		add_patches(ax1)
+		
 	print "plot saving"
 	plt.savefig(plotnames[i])
 	print "plot saved"

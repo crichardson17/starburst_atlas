@@ -460,7 +460,7 @@ y36  = double(datastarburst36[:4147,1])
 # Plot x vs. y in 4 subplots
 
 fig = plt.figure(1)
-sp1 = plt.subplot(321) #rows columns location of this parcticular plot
+sp5 = plt.subplot(325) #rows columns location of this parcticular plot
 p1 = plt.plot(x3,y1, 'k', linewidth=.75, label="1 Myr")
 p2 = plt.plot(x3,y2, 'c', linewidth=.75, label="2 Myr")
 p3 = plt.plot(x1,y3, 'y', linewidth=.75, label="3 Myr")
@@ -471,13 +471,14 @@ p6 = plt.plot(x2,y6, 'b', linewidth=.75, label="6 Myr")
 plt.xlim(10**1, 10**2)
 plt.ylim(10**0, 10**6)
 plt.yticks(fontsize=16)
-#plt.xticks(fontsize=15)
+plt.xticks(fontsize=16)
 plt.xscale('log')
 plt.yscale('log')
-sp1.set_xticklabels([])
+plt.xlabel(r'$h$$\nu$ [$\rm{eV}$]', fontsize = 18)
 
 
-sp1.text(.5,.9,"Geneva Track Instantaneous with Rotation", horizontalalignment="center", transform = sp1.transAxes, fontsize = 16)
+
+sp5.text(.5,.9,"Geneva Track Instantaneous with Rotation", horizontalalignment="center", transform = sp5.transAxes, fontsize = 16)
 
 
 plt.ylabel(r'$4 \pi \nu J_\nu$ [$\rm{erg}$ $\mathrm{s}^{-1} \mathrm{cm} ^ {-2}$]', fontsize=18)
@@ -486,7 +487,7 @@ plt.legend(prop={'size':11})
 
 #--------------------------------------------------------
 
-sp2 = plt.subplot(322)
+sp6 = plt.subplot(326)
 p7 = plt.plot(x3,y7, 'k', linewidth=.75, label="1 Myr")
 p8 = plt.plot(x3,y8, 'c', linewidth=.75, label="2 Myr")
 p9 = plt.plot(x3,y9, 'y', linewidth=.75, label="3 Myr")
@@ -496,15 +497,15 @@ p12 = plt.plot(x3,y12, 'b', linewidth=.75, label="6 Myr")
 
 plt.xlim(10**1, 10**2)
 plt.ylim(10**0, 10**6)
-#plt.yticks(fontsize=15)
-#plt.xticks(fontsize=15)
-plt.legend(prop={'size':10})
+plt.yticks(fontsize=16)
+plt.xticks(fontsize=16)
 plt.xscale('log')
 plt.yscale('log')
-sp2.set_xticklabels([])
-sp2.set_yticklabels([])
 
-sp2.text(.5,.9,"Geneva Track Continuous with Rotation", horizontalalignment="center", transform = sp2.transAxes, fontsize = 16)
+sp6.set_yticklabels([])
+plt.xlabel(r'$h$$\nu$ [$\rm{eV}$]', fontsize = 18)
+
+sp6.text(.5,.9,"Geneva Track Continuous with Rotation", horizontalalignment="center", transform = sp6.transAxes, fontsize = 16)
 
 
 
@@ -531,6 +532,7 @@ plt.legend(prop={'size':10})
 plt.xscale('log')
 plt.yscale('log')
 sp3.set_xticklabels([])
+
 plt.ylabel(r'$4 \pi \nu J_\nu$ [$\rm{erg}$ $\mathrm{s}^{-1} \mathrm{cm} ^ {-2}$]', fontsize=18)
 
 sp3.text(.5,.9,"Geneva Track Instantaneous without Rotation", horizontalalignment="center", transform = sp3.transAxes, fontsize = 16)
@@ -558,6 +560,7 @@ plt.xscale('log')
 plt.yscale('log')
 yt_min = 10**0
 yt_max = 10**5
+
 sp4.set_xticklabels([])
 sp4.set_yticklabels([])
 
@@ -571,7 +574,7 @@ plt.legend(prop={'size':11})
 
 fig = plt.figure(1)
 
-sp5 = plt.subplot(325) #rows columns location of this parcticular plot
+sp1 = plt.subplot(321) #rows columns location of this parcticular plot
 p1 = plt.plot(x4,y25, 'k', linewidth=.75, label="1 Myr")
 p2 = plt.plot(x1,y26, 'c', linewidth=.75, label="2 Myr")
 p3 = plt.plot(x3,y27, 'y', linewidth=.75, label="3 Myr")
@@ -581,17 +584,14 @@ p6 = plt.plot(x6,y30, 'b', linewidth=.75, label="6 Myr")
 
 plt.xlim(10**1, 10**2)
 plt.ylim(10**0, 10**6)
-
 plt.yticks(fontsize=16)
 plt.xticks(fontsize=16)
 plt.xscale('log')
 plt.yscale('log')
+sp1.set_xticklabels([])
 
-plt.xlabel(r'$h$$\nu$ [$\rm{eV}$]', fontsize = 18)
+sp1.text(.5,.9,"Padova Track Instantaneous",horizontalalignment="center", transform = sp1.transAxes, fontsize = 16)
 plt.ylabel(r'$4 \pi \nu J_\nu$ [$\rm{erg}$ $\mathrm{s}^{-1} \mathrm{cm} ^ {-2}$]', fontsize=18)
-
-
-sp5.text(.5,.9,"Padova Track Instantaneous",horizontalalignment="center", transform = sp5.transAxes, fontsize = 16)
 
 
 plt.legend(prop={'size':11})
@@ -602,7 +602,7 @@ plt.legend(prop={'size':11})
 
 fig = plt.figure(1)
 
-sp6 = plt.subplot(326) #rows columns location of this parcticular plot
+sp2 = plt.subplot(322) #rows columns location of this parcticular plot
 p1 = plt.plot(x1,y31, 'k', linewidth=.75, label="1 Myr")
 p2 = plt.plot(x1,y32, 'c', linewidth=.75, label="2 Myr")
 p3 = plt.plot(x6,y33, 'y', linewidth=.75, label="3 Myr")
@@ -610,17 +610,16 @@ p4 = plt.plot(x6,y34, 'r', linewidth=.75, label="4 Myr")
 p5 = plt.plot(x6,y35, 'g', linewidth=.75, label="5 Myr")
 p6 = plt.plot(x6,y36, 'b', linewidth=.75, label="6 Myr")
 
-
 plt.xlim(10**1, 10**2)
 plt.ylim(10**0, 10**6)
-plt.yticks(fontsize=16)
 plt.xticks(fontsize=16)
 plt.xscale('log')
 plt.yscale('log')
-#sp6.set_xticklabels([])
-sp6.set_yticklabels([])
-plt.xlabel(r'$h$$\nu$ [$\rm{eV}$]', fontsize = 18)
-sp6.text(.5,.9,"Padova Track Continuous", horizontalalignment="center", transform = sp6.transAxes, fontsize = 16)
+sp2.set_xticklabels([])
+sp2.set_yticklabels([])
+
+
+sp2.text(.5,.9,"Padova Track Continuous", horizontalalignment="center", transform = sp2.transAxes, fontsize = 16)
 
 plt.legend(prop={'size':11})
 

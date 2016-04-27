@@ -124,7 +124,7 @@ def add_sub_plot(sub_num, elinesplot):
 		if sub_num == 13:
 			plt.annotate("h)", xy=(8,11),  xytext=(0.5,21), fontsize = 10,fontweight='bold')
 
-
+	'''
 	if sub_num == 4:
 		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
 		cb.ax.tick_params(labelsize=10) 
@@ -139,7 +139,7 @@ def add_sub_plot(sub_num, elinesplot):
 		cb.ax.tick_params(labelsize=10) 	
 	#if sub_num == (4,8,12,16):
 		#axColor = plt.axes([7,7.5,0,0.5])
-	
+	'''
 	#axis limits
 	yt_min = 8 ; yt_max = 23; xt_min = 0; xt_max = 10 
 	plt.ylim(yt_min,yt_max); plt.xlim(xt_min,xt_max) 
@@ -344,7 +344,7 @@ for j in range (len(z_total)):
 	ax1 = plt.subplot(4,4,1)
 	add_patches(ax1)
 	#plt.show()
-	plt.savefig(("Full_lines_%d.pdf")%j)
+	plt.savefig(("Full_lines_nocolorbar%d.pdf")%j)
 	print("plot {:d} complete".format(j+1))
 	plt.clf()
 if (time.clock() - t0) > 120:

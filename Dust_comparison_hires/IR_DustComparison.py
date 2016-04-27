@@ -118,7 +118,7 @@ def add_sub_plot_dustfree(eline,sub_num, set, rows):
 	
 	contour1 = plt.contour(x_axis_dustfree, y_axis_dustfree, z_line_dustfree, levels, colors='k', origin='lower', extent=extent) #teal contours, dashed
 	contourmap = plt.imshow(z_line_dustfree, cmap='Reds', extent= extent, aspect = "auto",origin='lower', vmin=0, vmax =4)
-
+	'''
 	if sub_num == 4:
 		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
 		cb.ax.tick_params(labelsize=10) 
@@ -131,6 +131,7 @@ def add_sub_plot_dustfree(eline,sub_num, set, rows):
 	if sub_num == 16:
 		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
 		cb.ax.tick_params(labelsize=10) 	
+	'''
 	if (sub_num == 1):
 		plt.annotate("a)", xy=(8,11),  xytext=(0.5,15.5), fontsize = 10, fontweight='bold')
 	if sub_num == 2:
@@ -185,19 +186,20 @@ def add_sub_plot_dusty(eline,sub_num, set,rows):
 	
 	contour1 = plt.contour(x_axis_dusty, y_axis_dusty, z_line_dusty, levels, colors='k', origin='lower', extent=extent) #teal contours, dashed
 	contourmap = plt.imshow(z_line_dusty, cmap='Reds', extent= extent, aspect = "auto",origin='lower', vmin=0, vmax =4)
-
+	'''
 	if sub_num == 4:
-		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
+		#cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
 		cb.ax.tick_params(labelsize=10) 
 	if sub_num == 8:
-		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
+		#cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
 		cb.ax.tick_params(labelsize=10) 	
 	if sub_num == 12:
 		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
 		cb.ax.tick_params(labelsize=10) 	
 	if sub_num == 16:
-		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
+		#cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
 		cb.ax.tick_params(labelsize=10) 
+	'''
 	plt.scatter(max_values_dusty[line[set][eline],2], max_values_dusty[line[set][eline],3], c ='k',marker = '*')
 	if set ==2:
 		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(4,8.5), fontsize = 10)
@@ -488,12 +490,10 @@ ax2 = plt.subplot(4,4,5)
 ax3 = plt.subplot(4,4,9)
 ax4 = plt.subplot(4,4,13)
 add_patches(ax1)
-add_patches(ax2)
-add_patches(ax3)
-add_patches(ax4)
+
 
 #plt.show()
-plt.savefig("IR_Dust_Comparison.pdf")
+plt.savefig("IR_Dust_Comparison_nopatch_nocolor.pdf")
 
 if (time.clock() - t0) > 120:
 	print((time.clock() - t0)/60., "minutes process time")
