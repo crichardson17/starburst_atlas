@@ -163,7 +163,7 @@ def add_sub_plot(sub_num, elinesplot):
 		plt.tick_params(labelleft = 'off')
 	if sub_num > 12:
 		plt.tick_params(labelbottom = 'on')
-		plt.xticks(arange(xt_min,xt_max,1), fontsize = 10)
+		plt.xticks(arange(xt_min+1,xt_max,1), fontsize = 10)
 		plt.xlabel('Log($n _{\mathrm{H}}  $)')
 	#else:
 	#	plt.tick_params(labelbottom = 'off')
