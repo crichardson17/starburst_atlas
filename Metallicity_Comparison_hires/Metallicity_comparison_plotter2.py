@@ -352,7 +352,7 @@ phi_values_subsolar = gridsubsolar[:,0]
 hdens_values_supersolar = gridsupersolar[:,1]
 phi_values_supersolar = gridsupersolar[:,0]
 # --------------------------------------------------
-
+'''
 #To fix when hdens > 10
 print "beginning modifications to hdens solar array"
 
@@ -404,7 +404,7 @@ hdens_values_supersolar = hdens_values_supersolar_2
 phi_values_supersolar = phi_values_supersolar_2
 Emissionlinessupersolar = Emissionlines_supersolar_2
 print "modifications to hdens supersolar array complete"
-
+'''
 # ---------------------------------------------------
 #there are the emission line names properly formatted
 print("Importing headers from header file")
@@ -580,6 +580,8 @@ for i in range(3):
 		add_sub_plot_subsolar(counter,j,i,4)
 		add_sub_plot_solar(counter,j+1,i,4)
 		add_sub_plot_supersolar(counter,j+2,i,4)
+		ax1 = plt.subplot(1,1,4)
+		add_patches(ax1)
 		counter += 1
 		
 	print "plot saving"
