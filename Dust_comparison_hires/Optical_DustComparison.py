@@ -25,7 +25,7 @@ import time
 # ------------------------------------------------------------------------------------------------------
 # keep track of how long the code takes to run 
 t0 = time.clock()
-headerloc = "/Users/helen/Documents/Thesis_Research/SF_MASTER/git_atlas_complete/headers_dir/headers.txt"
+headerloc = "/Users/helen/Documents/Elon/Thesis_Research/github_repo/starburst_atlas/headers_dir/headers.txt"
 # ------------------------------------------------------------------------------------------------------
 #input data files loaded in here
         
@@ -143,9 +143,9 @@ def add_sub_plot_dustfree(eline,sub_num, set, rows):
 	
 	plt.scatter(max_values_dustfree[line[set][eline],2], max_values_dustfree[line[set][eline],3], c ='k',marker = '*')
 	if set ==2:
-		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(4,8.5), fontsize = 10)
+		plt.annotate(headers[line[set][eline]], xy=(3,8.5),  xytext=(3,8.5), fontsize = 10)
 	else:
-		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(4,8.5), fontsize = 10)
+		plt.annotate(headers[line[set][eline]], xy=(3,8.5),  xytext=(3,8.5), fontsize = 10)
 	plt.annotate(max_values_dustfree[line[set][eline],0], xy = (max_values_dustfree[line[set][eline],2], max_values_dustfree[line[set][eline],3]), xytext = (0, -10), textcoords = 'offset points', ha = 'right', va = 'bottom', fontsize=10)
 	plt.tick_params(labelleft = 'off')
 	if sub_num in [1,5,9,13,17,21] : 
@@ -159,7 +159,7 @@ def add_sub_plot_dustfree(eline,sub_num, set, rows):
 	yt_max = 17
 
 	xt_min = 0
-	xt_max = 10
+	xt_max = 6
 	plt.ylim(yt_min,yt_max)
 	plt.xlim(xt_min,xt_max) 
 	plt.yticks(arange(yt_min,yt_max+1,1),fontsize=10)
@@ -202,9 +202,9 @@ def add_sub_plot_dusty(eline,sub_num, set,rows):
 		'''
 	plt.scatter(max_values_dusty[line[set][eline],2], max_values_dusty[line[set][eline],3], c ='k',marker = '*')
 	if set ==2:
-		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(4,8.5), fontsize = 10)
+		plt.annotate(headers[line[set][eline]], xy=(3,8.5),  xytext=(3,8.5), fontsize = 10)
 	else:
-		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(4,8.5), fontsize = 10)
+		plt.annotate(headers[line[set][eline]], xy=(3,8.5),  xytext=(3,8.5), fontsize = 10)
 
 	plt.annotate(max_values_dusty[line[set][eline],0], xy = (max_values_dusty[line[set][eline],2], max_values_dusty[line[set][eline],3]), xytext = (0, -10), textcoords = 'offset points', ha = 'right', va = 'bottom', fontsize=10)
 	if sub_num == 1:
@@ -213,7 +213,7 @@ def add_sub_plot_dusty(eline,sub_num, set,rows):
 	yt_max = 17
 
 	xt_min = 0
-	xt_max = 10
+	xt_max = 6
 
 	plt.ylim(yt_min,yt_max)
 	plt.xlim(xt_min,xt_max) 
@@ -318,7 +318,7 @@ phi_values_dustfree_2 = empty(shape=[0, 1])
 Emissionlines_dustfree_2 = empty(shape=[0, len(Emissionlinesdustfree[0,:])])
 
 for i in range(len(hdens_values_dustfree)):
-	if (float(hdens_values_dustfree[i]) < 10.100) & (float(phi_values_dustfree[i]) < 17.100) : 
+	if (float(hdens_values_dustfree[i]) < 6.100) & (float(phi_values_dustfree[i]) < 17.100) : 
 		hdens_values_dustfree_2 = append(hdens_values_dustfree_2, hdens_values_dustfree[i])
 		phi_values_dustfree_2 = append(phi_values_dustfree_2, phi_values_dustfree[i])
 		Emissionlines_dustfree_2 = vstack([Emissionlines_dustfree_2, Emissionlinesdustfree[i,:]])
@@ -335,7 +335,7 @@ phi_values_dusty_2 = empty(shape=[0, 1])
 Emissionlines_dusty_2 = empty(shape=[0, len(Emissionlinesdusty[0,:])])
 
 for i in range(len(hdens_values_dusty)):
-	if (float(hdens_values_dusty[i]) < 10.100) & (float(phi_values_dusty[i]) < 17.100) : 
+	if (float(hdens_values_dusty[i]) < 6.100) & (float(phi_values_dusty[i]) < 17.100) : 
 		hdens_values_dusty_2 = append(hdens_values_dusty_2, hdens_values_dusty[i])
 		phi_values_dusty_2 = append(phi_values_dusty_2, phi_values_dusty[i])
 		Emissionlines_dusty_2 = vstack([Emissionlines_dusty_2, Emissionlinesdusty[i,:]])
@@ -489,6 +489,7 @@ ax2 = plt.subplot(4,4,5)
 ax3 = plt.subplot(4,4,9)
 ax4 = plt.subplot(4,4,13)
 add_patches(ax1)
+add_patches(ax3)
 
 #plt.show()
 plt.savefig("Optical_Dust_Comparison_nopatch_nocolor.pdf")

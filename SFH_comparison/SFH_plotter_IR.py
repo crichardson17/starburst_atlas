@@ -417,12 +417,11 @@ print "data arraged"
 # ---------------------------------------------------
 
 #below is where you should specify which lines you'd like to plot
-desired = [76,77,79,80,
-			85,87,88,89, 
-			104, 102, 105, 98] 
+desired = [73,75,76,78,
+			84,86,87,88] 
 
 plt.clf()
-for i in range(12):
+for i in range(8):
 	add_sub_plot(i+1,desired[i])
 
 plt.savefig('SFH_Comp_IR.pdf')

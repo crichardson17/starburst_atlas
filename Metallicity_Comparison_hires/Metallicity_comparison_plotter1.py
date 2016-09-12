@@ -25,7 +25,7 @@ import time
 # ------------------------------------------------------------------------------------------------------
 # keep track of how long the code takes to run 
 t0 = time.clock()
-headerloc = "/Users/helen/Documents/Thesis_Research/github_repo/starburst_atlas/headers_dir/headers.txt"
+headerloc = "/Users/helen/Documents/Elon/Thesis_Research/github_repo/starburst_atlas/headers_dir/headers.txt"
 # ------------------------------------------------------------------------------------------------------
 #input data files loaded in here
         
@@ -138,9 +138,9 @@ def add_sub_plot_subsolar(eline,sub_num, set,rows):
 	
 	plt.scatter(max_values_subsolar[line[set][eline],2], max_values_subsolar[line[set][eline],3], c ='k',marker = '*')
 	if set ==2:
-		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(3,8.5), fontsize = 10)
+		plt.annotate(headers[line[set][eline]], xy=(3,8.5),  xytext=(3,8.5), fontsize = 10)
 	else:
-		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(3,8.5), fontsize = 10)
+		plt.annotate(headers[line[set][eline]], xy=(3,8.5),  xytext=(3,8.5), fontsize = 10)
 
 	plt.annotate(max_values_subsolar[line[set][eline],0], xy = (max_values_subsolar[line[set][eline],2], max_values_subsolar[line[set][eline],3]), xytext = (0, -10), textcoords = 'offset points', ha = 'right', va = 'bottom', fontsize=10)
 	if sub_num == 1:
@@ -156,10 +156,10 @@ def add_sub_plot_subsolar(eline,sub_num, set,rows):
 		plt.annotate("d)", xy=(8,11),  xytext=(0.5,21), fontsize = 10,fontweight='bold')
 
 	yt_min = 8
-	yt_max = 23
+	yt_max = 17
 
 	xt_min = 0
-	xt_max = 10
+	xt_max = 6
 	plt.ylim(yt_min,yt_max)
 	plt.xlim(xt_min,xt_max) 
 	plt.yticks(arange(yt_min+1,yt_max,1),fontsize=10)
@@ -185,9 +185,9 @@ def add_sub_plot_solar(eline,sub_num, set, rows):
 
 	plt.scatter(max_values_solar[line[set][eline],2], max_values_solar[line[set][eline],3], c ='k',marker = '*')
 	if set ==2:
-		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(3,8.5), fontsize = 10)
+		plt.annotate(headers[line[set][eline]], xy=(3,8.5),  xytext=(3,8.5), fontsize = 10)
 	else:
-		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(3,8.5), fontsize = 10)
+		plt.annotate(headers[line[set][eline]], xy=(3,8.5),  xytext=(3,8.5), fontsize = 10)
 	plt.annotate(max_values_solar[line[set][eline],0], xy = (max_values_solar[line[set][eline],2], max_values_solar[line[set][eline],3]), xytext = (0, -10), textcoords = 'offset points', ha = 'right', va = 'bottom', fontsize=10)
 	if sub_num == 2:
 		plt.title("Solar", fontsize = 12)
@@ -196,10 +196,10 @@ def add_sub_plot_solar(eline,sub_num, set, rows):
 	if sub_num in [21,22,23] : 
 		plt.xlabel('Log($n _{\mathrm{H}}  $)')
 	yt_min = 8
-	yt_max = 23
+	yt_max = 17
 
 	xt_min = 0
-	xt_max = 10
+	xt_max = 6
 	plt.ylim(yt_min,yt_max)
 	plt.xlim(xt_min,xt_max) 
 	plt.yticks(arange(yt_min+1,yt_max,1),fontsize=10)
@@ -223,9 +223,9 @@ def add_sub_plot_supersolar(eline,sub_num,set, rows):
 
 	plt.scatter(max_values_supersolar[line[set][eline],2], max_values_supersolar[line[set][eline],3], c ='k',marker = '*')
 	if set ==2:
-		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(3,8.5), fontsize = 10)
+		plt.annotate(headers[line[set][eline]], xy=(3,8.5),  xytext=(3,8.5), fontsize = 10)
 	else:
-		plt.annotate(headers[line[set][eline]], xy=(10,11),  xytext=(3,8.5), fontsize = 10)
+		plt.annotate(headers[line[set][eline]], xy=(3,8.5),  xytext=(3,8.5), fontsize = 10)
 
 	plt.annotate(max_values_supersolar[line[set][eline],0], xy = (max_values_supersolar[line[set][eline],2], max_values_supersolar[line[set][eline],3]), xytext = (0, -10), textcoords = 'offset points', ha = 'right', va = 'bottom', fontsize=10)
 	
@@ -236,10 +236,10 @@ def add_sub_plot_supersolar(eline,sub_num,set, rows):
 	if sub_num in [21,22,23] : 
 		plt.xlabel('Log($n _{\mathrm{H}}  $)')
 	yt_min = 8
-	yt_max = 23
+	yt_max = 17
 
 	xt_min = 0
-	xt_max = 10
+	xt_max = 6
 	plt.ylim(yt_min,yt_max)
 	plt.xlim(xt_min,xt_max) 
 	plt.yticks(arange(yt_min+1,yt_max,1),fontsize=10)
@@ -357,7 +357,7 @@ phi_values_subsolar = gridsubsolar[:,0]
 hdens_values_supersolar = gridsupersolar[:,1]
 phi_values_supersolar = gridsupersolar[:,0]
 # --------------------------------------------------
-
+'''
 #To fix when hdens > 10
 print "beginning modifications to hdens solar array"
 
@@ -366,7 +366,7 @@ phi_values_solar_2 = empty(shape=[0, 1])
 Emissionlines_solar_2 = empty(shape=[0, len(Emissionlinessolar[0,:])])
 
 for i in range(len(hdens_values_solar)):
-	if float(hdens_values_solar[i]) < 10.100 : 
+	if (float(hdens_values_solar[i]) < 6.100) & (float(phi_values_solar[i]) < 17.100) : 
 		hdens_values_solar_2 = append(hdens_values_solar_2, hdens_values_solar[i])
 		phi_values_solar_2 = append(phi_values_solar_2, phi_values_solar[i])
 		Emissionlines_solar_2 = vstack([Emissionlines_solar_2, Emissionlinessolar[i,:]])
@@ -383,7 +383,7 @@ phi_values_subsolar_2 = empty(shape=[0, 1])
 Emissionlines_subsolar_2 = empty(shape=[0, len(Emissionlinessubsolar[0,:])])
 
 for i in range(len(hdens_values_subsolar)):
-	if float(hdens_values_subsolar[i]) < 10.100 : 
+	if (float(hdens_values_subsolar[i]) < 6.100) & (float(phi_values_subsolar[i]) < 17.100) :
 		hdens_values_subsolar_2 = append(hdens_values_subsolar_2, hdens_values_subsolar[i])
 		phi_values_subsolar_2 = append(phi_values_subsolar_2, phi_values_subsolar[i])
 		Emissionlines_subsolar_2 = vstack([Emissionlines_subsolar_2, Emissionlinessubsolar[i,:]])
@@ -400,7 +400,7 @@ phi_values_supersolar_2 = empty(shape=[0, 1])
 Emissionlines_supersolar_2 = empty(shape=[0, len(Emissionlinessupersolar[0,:])])
 
 for i in range(len(hdens_values_supersolar)):
-	if float(hdens_values_supersolar[i]) < 10.100 : 
+	if (float(hdens_values_supersolar[i]) < 6.100) & (float(phi_values_supersolar[i]) < 17.100) : 
 		hdens_values_supersolar_2 = append(hdens_values_supersolar_2, hdens_values_supersolar[i])
 		phi_values_supersolar_2 = append(phi_values_supersolar_2, phi_values_supersolar[i])
 		Emissionlines_supersolar_2 = vstack([Emissionlines_supersolar_2, Emissionlinessupersolar[i,:]])
@@ -409,7 +409,7 @@ hdens_values_supersolar = hdens_values_supersolar_2
 phi_values_supersolar = phi_values_supersolar_2
 Emissionlinessupersolar = Emissionlines_supersolar_2
 print "modifications to hdens supersolar array complete"
-
+'''
 # ---------------------------------------------------
 #there are the emission line names properly formatted
 print("Importing headers from header file")
@@ -516,7 +516,7 @@ ysupersolar = gridarraysupersolar[:,1]
 #change desired lines here!
 line = [[1,3,7,18],
 		[41,57,61,67],
-		[76,77,85,102]]
+		[76,77,85,105]]
 
 #create z array for this plot
 zsolar = [None] * (len(line))
@@ -575,7 +575,7 @@ plt.subplots_adjust(wspace=0, hspace=0) #remove space between plots
 #levels = arange(10**-1,10, .2)
 levels = arange(10**-2,10**2, 1)
 # ---------------------------------------------------
-plotnames = ["UV_MetallicityComp_nop.pdf", "Optical_MetallicityComp_nop.pdf","IR_MetallicityComp_nop.pdf"] 
+plotnames = ["UV_MetallicityComp_patched.pdf", "Optical_MetallicityComp_patched.pdf","IR_MetallicityComp_patched.pdf"] 
 
 subplots_ref2 = [1,5,9,13]#,17,21]
 for i in range(3):
@@ -585,6 +585,8 @@ for i in range(3):
 		add_sub_plot_subsolar(counter,j,i,4)
 		add_sub_plot_solar(counter,j+1,i,4)
 		add_sub_plot_supersolar(counter,j+2,i,4)
+		ax1= plt.subplot(counter,j,i,4)
+		add_patches(ax1)
 		counter += 1
 		
 	print "plot saving"

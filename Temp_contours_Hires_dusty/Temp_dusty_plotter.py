@@ -116,9 +116,9 @@ def add_sub_plot(sub_num):
 	#plt.annotate(max_values[0,0], xy= (max_values[0,2], max_values[0,3]), xytext = (5, -30), textcoords = 'offset points', ha = 'left', va = 'bottom', fontsize=15)
 	#axis limits
 	yt_min = 8
-	yt_max = 23
+	yt_max = 17
 	xt_min = 0
-	xt_max = 10
+	xt_max = 6
 	plt.ylim(yt_min,yt_max)
 	plt.xlim(xt_min,xt_max) 
 	plt.yticks(arange(yt_min,yt_max+1,1),fontsize=16)
@@ -254,7 +254,7 @@ xion, yion = meshgrid(xion, yion)
 #plotting time!
 
 print "interpolatation complete; now plotting"
-levels = np.array([ (np.arange(.2,.9,.2))+i for i in range(0, 20) ]).flatten()
+levels = np.array([ (np.arange(.1,.9,.1))+i for i in range(0, 20) ]).flatten()
 levels2 = arange(0,20, 1)
 #levelsio = [-3.0,0.0,3.0]
 levelsio = (-3.0,0.0,3.0)

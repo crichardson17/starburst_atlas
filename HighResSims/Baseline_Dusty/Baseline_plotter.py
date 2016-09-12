@@ -27,7 +27,7 @@ import time
 # ------------------------------------------------------------------------------------------------------
 # keep track of how long the code takes to run 
 t0 = time.clock()
-headerloc = "/Users/helen/Documents/Thesis_Research/github_repo/starburst_atlas/headers_dir/headers.txt"
+headerloc = "/Users/helen/Documents/Elon/Thesis_Research/github_repo/starburst_atlas/headers_dir/headers.txt"
 # ------------------------------------------------------------------------------------------------------
 
 #data files' names from source directory constructed here. default source directory is working directory
@@ -102,7 +102,7 @@ def add_sub_plot(sub_num, elinesplot):
 	contourmap = plt.imshow(z_line, cmap='Reds', extent= extent, aspect = "auto",origin='lower', vmin=0, vmax =4)
 
 	plt.scatter(max_values[line[elinesplot][sub_num-1],2], max_values[line[elinesplot][sub_num-1],3], c ='k',marker = '*')
-	plt.annotate(headers[line[elinesplot][sub_num-1]], xy=(8,11),  xytext=(4,8.5), fontsize = 10)
+	plt.annotate(headers[line[elinesplot][sub_num-1]], xy=(3,8.5),  xytext=(3,8.5), fontsize = 10)
 	plt.annotate(max_values[line[elinesplot][sub_num-1],0], xy = (max_values[line[elinesplot][sub_num-1],2], max_values[line[elinesplot][sub_num-1],3]), 
 		xytext = (0, -10), textcoords = 'offset points', ha = 'right', va = 'bottom', fontsize=10, color='k')
 	if elinesplot in (0,2,4,6):
@@ -124,7 +124,7 @@ def add_sub_plot(sub_num, elinesplot):
 		if sub_num == 13:
 			plt.annotate("h)", xy=(8,11),  xytext=(0.5,21), fontsize = 10,fontweight='bold')
 
-	'''
+	
 	if sub_num == 4:
 		cb = plt.colorbar(contourmap, pad = 0.05, ticks=np.arange(0,4.5,0.5))
 		cb.ax.tick_params(labelsize=10) 
@@ -139,16 +139,15 @@ def add_sub_plot(sub_num, elinesplot):
 		cb.ax.tick_params(labelsize=10) 	
 	#if sub_num == (4,8,12,16):
 		#axColor = plt.axes([7,7.5,0,0.5])
-	'''
+	
 	#axis limits
-	yt_min = 8 ; yt_max = 23; xt_min = 0; xt_max = 10 
+	yt_min = 8 ; yt_max = 17; xt_min = 0; xt_max = 6 
 	plt.ylim(yt_min,yt_max); plt.xlim(xt_min,xt_max) 
 
 	#ticks
 	plt.yticks(arange(yt_min+1,yt_max,1),fontsize=10)
 	plt.xticks(arange(xt_min+1,xt_max,1), fontsize = 10)
 	
-
 	#axes labels 
 	if sub_num == 0:
 		plt.tick_params(labelbottom = 'on')
@@ -228,7 +227,7 @@ Emissionlines_2 = empty(shape=[0, len(Emissionlines[0,:])])
 
 #save data in range desired to temp arrays
 for i in range(len(hdens_values)):
-	if float(hdens_values[i]) < 10.100 : 
+	if (float(hdens_values[i]) < 6.100) & (float(phi_values[i]) < 17.100) : 
 		hdens_values_2 = append(hdens_values_2, hdens_values[i])
 		phi_values_2 = append(phi_values_2, phi_values[i])
 		Emissionlines_2 = vstack([Emissionlines_2, Emissionlines[i,:]])
@@ -307,7 +306,7 @@ line = [
 	#AR 5  7005A, AR 3  7135A, TOTL  7325A, AR 3  7751, 6LEV  8446, CA2X  8498, CA2Y  8542, CA2Z  8662; 
 	#CA 2  8579A, S  3  9069, H  1  9229, S  3  9532... H  1  9546
 		#More Lines
-	[97,112, 107, 110, 108, 111, 106, 109, 104, 101, 102, 105, 99, 103, 98, 100],
+	[97,112, 107, 110, 108, 111, 106, 109, 104, 101, 99, 100, 1, 1, 1, 1],
 	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 	
 ] 
@@ -344,7 +343,7 @@ for j in range (len(z_total)):
 	ax1 = plt.subplot(4,4,1)
 	add_patches(ax1)
 	#plt.show()
-	plt.savefig(("Full_lines_nocolorbar%d.pdf")%j)
+	plt.savefig(("Full_lines_withcolorbar%d.pdf")%j)
 	print("plot {:d} complete".format(j+1))
 	plt.clf()
 if (time.clock() - t0) > 120:

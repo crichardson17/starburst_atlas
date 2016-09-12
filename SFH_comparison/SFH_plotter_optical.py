@@ -47,22 +47,23 @@ def add_sub_plot(sub_num, desiredline):
 
 	plt.xlim(min(xvals),max(xvals))
 	plt.xticks(arange(0,8,1),fontsize=6)
-	plt.yticks(arange(0,5,.5),fontsize=6)
+	plt.yticks(arange(0,4,.5),fontsize=6)
 
 	#some labels
-	if sub_num in [1, 2,3,4]:
+	if sub_num in [1,2,3,4]:
 		plt.tick_params(labelleft = 'off')
 		plt.tick_params(labelbottom = 'on')
 		plt.xlabel('Age (Myr)', fontsize=6)
 		plt.ylim(0,4.0) 
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
+		plt.yticks(arange(0,4.5,.5),fontsize=6)
 
-
-	if sub_num in [6,7,8,0]:
+	if sub_num in [5,6,7,8]:
 		plt.tick_params(labelleft = 'off')
 		plt.xlabel('Age (Myr)', fontsize=6)
 		plt.ylim(0,4.0) 
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
+		plt.yticks(arange(0,4.5,.5),fontsize=6)
 
 	if sub_num in [9, 10, 11, 12]:
 		plt.tick_params(labelleft = 'off')
@@ -70,6 +71,7 @@ def add_sub_plot(sub_num, desiredline):
 		plt.ylim(0,2.5) 
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
 		plt.xlabel('Age (Myr)', fontsize=6)
+		plt.yticks(arange(0,3,.5),fontsize=6)
 
 	if sub_num in [13, 14, 15, 16,0]:
 		plt.tick_params(labelleft = 'off')
@@ -77,6 +79,7 @@ def add_sub_plot(sub_num, desiredline):
 		plt.ylim(0,1.5) 
 		plt.annotate(headers[desiredline], xy=(0.1,0.05),  xytext=(0.1,0.05), fontsize = 6)
 		plt.xlabel('Age (Myr)', fontsize=6)
+		plt.yticks(arange(0,2,.5),fontsize=6)
 
 
 	if sub_num in [9]:
@@ -437,10 +440,10 @@ xvals = [0,2,4,5,6,8]
 print "data arraged"
 
 #below is where you should specify which lines you'd like to plot
-desired = [41,43,59,61,
-			69,70,71,73,
-			52,62,64,65,
-			36,37,53,57]
+desired = [41,43,58,60,
+			68,69,70,72,
+			52,61,63,64,
+			36,37,53,56]
 
 plt.clf()
 for i in range(16):
