@@ -131,8 +131,10 @@ for j in range(len(concatenated_data[0])):
 
 #to round off the maxima 
 max_values[:,0] = [ '%.1f' % elem for elem in max_values[:,0] ]
-print "data arranged"
 
+print max_values[53,0]
+
+print "data arranged"
 # ---------------------------------------------------
 
 #Creating the grid to interpolate with for contours. 
