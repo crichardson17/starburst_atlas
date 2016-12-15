@@ -320,7 +320,7 @@ plt.clf()
 for j in range (2): 
 	for i in range(16):
 		add_sub_plot(i,j)
-	ax1 = plt.subplot(4,4,1)
+	ax1 = plt.subplot(4,4,3)
 	add_patches(ax1)
 	#plt.show()
 	plt.savefig(("Full_lines_edit_%d.pdf")%j)
